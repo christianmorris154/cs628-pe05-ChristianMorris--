@@ -1,7 +1,7 @@
 # cs628-pe05-ChristianMorris--
 
 # Preview:
-![Screenshot Preview](Screenshot 2025-03-09 234612.jpg)
+![Screenshot Preview](Screenshot-2025-03-09 234612.jpg)
 
 # Input
 Users input and manage recipes store in db
