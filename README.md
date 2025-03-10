@@ -1,5 +1,8 @@
 # cs628-pe05-ChristianMorris--
 
+# Preview:
+![Screenshot Preview](Screenshot 2025-03-09 234612.jpg)
+
 # Input
 Users input and manage recipes store in db
 The app lets the users navigate their inquiries to see the recipe list, update and delete the informatio.
