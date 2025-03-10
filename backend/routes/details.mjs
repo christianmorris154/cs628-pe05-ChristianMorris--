@@ -7,16 +7,19 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   let collection = await db.collection("details");
   let results = await collection.find({}).toArray();
-  res.send(results).status(200);
+  res.status(200).send(results);
 });
 
 router.get("/:id", async (req, res) => {
   let collection = await db.collection("details");
-  let query = {_id: new ObjectId(req.params.id)};
+  let query = { _id: new ObjectId(req.params.id) };
   let result = await collection.findOne(query);
 
-  if (!result) res.send("Not found").status(404);
-  else res.send(result).status(200);
+  if (!result) {
+    res.status(404).send("Not found");
+  } else {
+    res.status(200).send(result);
+  }
 });
 
 router.post("/", async (req, res) => {
@@ -27,32 +30,32 @@ router.post("/", async (req, res) => {
   };
   let collection = await db.collection("details");
   let result = await collection.insertOne(newDocument);
-  res.send(result).status(204);
+  // Using 201 (Created) as the status code since we are returning a newly created document.
+  res.status(201).send(result);
 });
 
 router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
-  const updates =  {
+  const updates = {
     $set: {
       name: req.body.name,
       ingredients: req.body.ingredients,
       instruction: req.body.instruction,
-    }
+    },
   };
 
   let collection = await db.collection("details");
   let result = await collection.updateOne(query, updates);
 
-  res.send(result).status(200);
+  res.status(200).send(result);
 });
 
 router.delete("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
-
-  const collection = db.collection("details");
+  let collection = await db.collection("details");
   let result = await collection.deleteOne(query);
 
-  res.send(result).status(200);
+  res.status(200).send(result);
 });
 
 export default router;

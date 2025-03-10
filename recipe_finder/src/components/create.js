@@ -22,7 +22,7 @@ export default function Create() {
   const newRecipe = { ...form };
 
   try {
-    const response = await fetch("https://bookish-bassoon-gj5rrvg79q636ww-5050.app.github.dev/details", {
+    const response = await fetch("https://stunning-space-meme-v5j546p946gfp4w9-5050.app.github.dev/details", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -18,7 +18,7 @@ export default function Edit() {
 
       const id = params.id.toString();
       const response = await fetch(
-        `https://bookish-bassoon-gj5rrvg79q636ww-5050.app.github.dev/details/${id}`
+        `https://stunning-space-meme-v5j546p946gfp4w9-5050.app.github.dev/details/${id}`
       );
 
       if (!response.ok) {
@@ -57,7 +57,7 @@ export default function Edit() {
     };
 
     await fetch(
-      `https://bookish-bassoon-gj5rrvg79q636ww-5050.app.github.dev/details/${params.id}`,
+      `https://stunning-space-meme-v5j546p946gfp4w9-5050.app.github.dev/details/${params.id}`,
       {
         method: "PATCH",
         body: JSON.stringify(editedRecipe),

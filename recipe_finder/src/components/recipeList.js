@@ -34,7 +34,7 @@ export default function RecipeList() {
   useEffect(() => {
     async function getRecipes() {
       try {
-        const response = await fetch('https://bookish-bassoon-gj5rrvg79q636ww-5050.app.github.dev/details'); // Replace with your API URL
+        const response = await fetch('https://stunning-space-meme-v5j546p946gfp4w9-5050.app.github.dev/details'); // Replace with your API URL
 
         if (!response.ok) {
           throw new Error(`Request failed with status: ${response.status}`);
